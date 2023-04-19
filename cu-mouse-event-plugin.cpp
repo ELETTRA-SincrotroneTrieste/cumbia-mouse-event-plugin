@@ -42,7 +42,6 @@ QString CuMouseEvPlugin::m_get_point(const CuContext* ctx, bool ensure_tghost) c
     }
     if(!s.isEmpty() && ensure_tghost && !s.contains(QRegularExpression(".*:\\d+/"))) {
         QString tgh = QProcessEnvironment::systemEnvironment().value("TANGO_HOST");
-        printf("TANGO_HOST is %s\n", qstoc(tgh));
         if(!tgh.isEmpty())
             s = tgh + "/" + s;
     }
